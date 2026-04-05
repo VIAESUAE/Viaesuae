@@ -27,30 +27,15 @@ title: index
   <section id="updates" class="section updates-section">
     <h2 class="section-title fade-in"><u>NEWS/UPDATE<br>最近更新</u></h2>
     <div class="updates-container">
-      <!-- 更新卡片示例 1 -->
+      {% for post in site.posts limit:3 %}
       <div class="update-card fade-in">
         <div class="card-content">
-          <h3>网页制作中</h3>
-          <p class="update-date">2025-05-11</p>
-          <p>吃饱了没事干，前所未有的挑战</p>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="update-date">{{ post.date | date: "%Y-%m-%d" }}</p>
+          <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
         </div>
       </div>
-      <!-- 更新卡片示例 2 -->
-      <div class="update-card fade-in">
-        <div class="card-content">
-          <h3>宣传图片制作完成</h3>
-          <p class="update-date">2024-11-05</p>
-          <p>宣传图使用了部分3D辅助完成</p>
-        </div>
-      </div>
-      <!-- 更新卡片示例 3 -->
-      <div class="update-card fade-in">
-        <div class="card-content">
-          <h3>第一篇文章</h3>
-          <p class="update-date">2024-06-25</p>
-          <p>上传第一篇文章</p>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </section>
 
