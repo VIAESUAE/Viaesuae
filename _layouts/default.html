@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>自主路径/VIAE SUAE</title>
   <!-- 引入样式表 -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
   <style>
     @font-face{
       font-family: "LBS";
@@ -17,10 +17,6 @@
   <!-- <link rel="icon" href="favicon.ico"> -->
   <embed src="DancingSunrise.mp3" autostart="true" loop="true" hidden="true"></embed>
 </head>
-
-<main>
-    {{ content }}
-</main>
 
 <body>
   <!-- 顶部导航栏 -->
@@ -39,13 +35,17 @@
     </nav>
   </header>
 
+  <main>
+    {{ content }}
+  </main>
+
   <!-- 页脚 (可选) -->
   <footer class="footer">
     <p>&copy; 2025 VIAESUAE. All rights reserved.</p>
-    <p><a>用户协议</a><a>|</a><a href="karlinmenthlo@gmail.com">联系我们</a><a>|</a><a>加入我们</a></p>
+    <p><a>用户协议</a><a>|</a><a href="mailto:karlinmenthlo@gmail.com">联系我们</a><a>|</a><a>加入我们</a></p>
   </footer>
 
   <!-- 引入脚本文件 -->
-  <script src="script.js"></script>
+  <script src="{{ '/script.js' | relative_url }}"></script>
 </body>
 </html>
