@@ -1,0 +1,138 @@
+---
+layout: default
+title: index
+---
+
+  <!-- 封面大图 Banner -->
+  <section id="cover" class="cover-section">
+    <!-- 背景图片使用 CSS 设定，下面为浮层内容 -->
+    <div class="cover-content fade-in";>
+      <h1 class="cover-title"></h1>
+    </div>
+    <div>
+      <button id="enter-button" class="scroll-indicator down"></button>
+    </div>
+  </section>
+
+  <!--推荐 Section-->
+  <section id="recommendation" class="section updates-section">
+    <h2 class="section-title fade-in"><u>RECOMMENDATION</u><br><u style="font-size: 1em;">推荐阅读</u></h2>
+    <div class="sectiont-text fade-in"; style="font-size: 25px"; >
+      <p>台湾打起来了，怎么办？<br>如何跑路？<br>洼地的历史发明与逻辑
+      </p>
+    </div>
+  </section>
+
+  <!-- 最新更新 Section -->
+  <section id="updates" class="section updates-section">
+    <h2 class="section-title fade-in"><u>NEWS/UPDATE<br>最近更新</u></h2>
+    <div class="updates-container">
+      <!-- 更新卡片示例 1 -->
+      <div class="update-card fade-in">
+        <div class="card-content">
+          <h3>网页制作中</h3>
+          <p class="update-date">2025-05-11</p>
+          <p>吃饱了没事干，前所未有的挑战</p>
+        </div>
+      </div>
+      <!-- 更新卡片示例 2 -->
+      <div class="update-card fade-in">
+        <div class="card-content">
+          <h3>宣传图片制作完成</h3>
+          <p class="update-date">2024-11-05</p>
+          <p>宣传图使用了部分3D辅助完成</p>
+        </div>
+      </div>
+      <!-- 更新卡片示例 3 -->
+      <div class="update-card fade-in">
+        <div class="card-content">
+          <h3>第一篇文章</h3>
+          <p class="update-date">2024-06-25</p>
+          <p>上传第一篇文章</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类 Section -->
+  <section id="category" class="section concept-section">
+    <h2 class="section-title fade-in"><u>CATEGORY<br>分类</u></h2>
+    <div class="concept-container">
+
+      <div class="concept-item fade-in">
+        <a href="RunAwayFromSodom.html"><h3><u>跑路学</u></h3></a>
+        <p>概念设计 1：描述第一张概念图的含义或灵感来源。</p>
+      </div>
+
+       <div class="concept-item fade-in">
+        <a href="Neoclassicism.html"><h3><u>新古典主义</u></h3></a>
+        <p>概念设计 3：介绍第三张概念图的创作灵感或故事背景。</p>
+      </div>
+
+      <div class="concept-item fade-in">
+        <a href="NationInvention.html"><h3><u>民族发明</u></h3></a>
+        <p>概念设计 2：概述第二张概念图的设计思路和特色。</p>
+      </div>
+
+
+      <div class="concept-item fade-in">
+        <a href="Lantern.html"><h3><u>歧路灯</u></h3></a>
+        <p>概念设计 2：概述第二张概念图的设计思路和特色。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 名词解释 Section -->
+  <section id="glossary" class="section glossary-section">
+    <h2 class="section-title fade-in"><u>名词解释</u></h2>
+    <div class="glossary-search-container">
+      <input type="text" id="glossary-search" class="glossary-search" placeholder="输入以搜索...">
+      <button class="btn"><b>🔍︎</b></button>
+    </div>
+    <ul id="glossary-list" class="glossary-list fade-in">
+      <li style="text-align: center;"><strong>表述中所用的名词或者成句可能晦涩破碎，请善用搜索功能。</strong></li>
+  </section>
+
+    <!-- 帮助与问答 Section -->
+  <section id="faq" class="section faq-section">
+    <h2 class="section-title fade-in"><u>Frequently Asked Questions<br>帮助与问答</u></h2>
+    <div class="faq-container">
+      <!-- FAQ 项 1 -->
+      <div class="faq-item fade-in">
+        <div class="faq-question">Q1: 如何捐赠？</div>
+        <div class="faq-answer">A1：就是给钱，之后的之后再说</div>
+      </div>
+      <!-- FAQ 项 2 -->
+      <div class="faq-item fade-in">
+        <div class="faq-question">Q2: 何处可以参与讨论？</div>
+        <div class="faq-answer">A2: 还没做呢，等做出来再讨论，等我做个留言板</div>
+      </div>
+      <!-- FAQ 项 3 -->
+      <div class="faq-item fade-in">
+        <div class="faq-question">Q3: 如何联系开发者？</div>
+        <div class="faq-answer">A3: 您可以通过“参考资料”页面中的电子邮件地址或社交媒体联系人找到我们。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 捐赠支持 Section -->
+  <section id="donate" class="section donate-section">
+    <h2 class="section-title fade-in"><u>DONATE<br>捐赠支持</u></h2>
+    <p class="donate-text fade-in">如果您喜欢我们的内容并希望支持项目，请考虑捐赠。您的支持是我们持续更新的动力！</p>
+    <button id="donate-button" class="btn fade-in"><b>DONATE</b></button>
+  </section>
+
+  <!-- 捐赠弹窗 Modal -->
+  <div id="donate-modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3 style="color: #fff;">感谢您的支持！</h3>
+      <p style="color: #fff;">您可以通过以下方式捐赠：扫描二维码或转账到以下账号：
+        114514 893 191981 864<br>或通过以下虚拟钱包地址捐赠：YJSP114514<br><i>捐赠请备注ID或称谓方式</i>
+      </p>
+      <!-- 此处可放置捐赠二维码图片，如果需要，可使用 SVG 占位 -->
+      <img src="Saisenbani.png" width="300" height="300" alt="捐赠二维码">
+      <p style="color: #fff;">本月鸣谢名单：<b>没有人</b></p>
+    </div>
+  </div>
