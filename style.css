@@ -85,14 +85,16 @@ header.scrolled .nav-links li a {
   text-shadow: none;
 }
 
+/* --- 导航栏骨架修复 --- */
 .navbar {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 15px 40px;
-  display: flex;
+  display: flex; /* 关键：让 Logo 和菜单左右分布 */
   align-items: center;
   justify-content: space-between;
+  transition: all 0.3s ease;
 }
 
 .navbar .logo {
@@ -101,15 +103,27 @@ header.scrolled .nav-links li a {
   letter-spacing: 2px;
 }
 
-/* 关键：把颜色直接给到 a 标签上 */
+/* 统一控制 Logo 和 导航链接的颜色与排版 */
 .navbar .logo a, 
 .nav-links a {
-  color: var(--text-color); /* 这样它就会跟随 body 的 [data-theme] 变量自动变色 */
+  color: var(--text-color); /* 核心：跟随日夜模式自动切换黑白 */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-/* 导航链接的鼠标悬停效果：变红 */
+.nav-links {
+  list-style: none;
+  display: flex; /* 关键：让菜单项横着排 */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 25px; /* 项与项之间的间距 */
+}
+
+/* 悬停变红 */
 .nav-links a:hover {
   color: var(--accent-red);
 }
@@ -119,12 +133,10 @@ header.scrolled .nav-links li a {
   background: var(--text-color);
   color: var(--bg-color);
   border: none;
-  padding: 4px 10px;
-  margin-left: 20px;
+  padding: 5px 12px;
   cursor: pointer;
-  font-size: 0.8em;
+  font-family: inherit;
   font-weight: bold;
-  transition: transform 0.2s;
 }
 
 #theme-toggle:active {
@@ -403,24 +415,41 @@ html {
   padding-top: 30px;
 }
 
-.cover-section {
-  position: relative;
-  overflow: hidden;
-  background: var(--bg-color);
+/* 这里的样式会尝试渗透进评论区文字 */
+#cusdis_thread {
+  font-family: "LBS", serif !important;
+  color: var(--text-color) !important;
 }
 
-.cover-section::before {
+.cover-section {
+  height: 60vh; /* 缩短高度，别占满屏，更有档案感 */
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* 模拟钞票的底纹：极细的扫描线 */
+  background-image: radial-gradient(circle, var(--text-color) 0.5px, transparent 0.5px);
+  background-size: 30px 30px; 
+  opacity: 0.8;
+}
+
+.cover-section::after {
   content: "";
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background-image: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 2px,
-    rgba(128, 128, 128, 0.1) 2px,
-    rgba(128, 128, 128, 0.1) 4px
-  );
-  background: linear-gradient(135deg, #ff4d4d 0%, #3d5afe 50%, #1de9b6 100%);
-  mix-blend-mode: multiply; 
-  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  /* 钞票那种凹版印刷的明暗感 */
+  background: linear-gradient(to bottom, transparent, var(--bg-color));
+}
+
+.cover-title {
+  font-family: "LBS", serif;
+  font-size: 4rem;
+  color: var(--text-color);
+  z-index: 2;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  /* 加个微弱的红色投影，像印章错位 */
+  text-shadow: 2px 2px 0px var(--accent-red);
 }
