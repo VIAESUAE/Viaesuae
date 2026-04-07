@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "LBS";
+  /* 使用相对路径：假设 CSS 在根目录，字体也在根目录 */
+  src: url("./OldNewspaperSung.ttf") format("truetype");
+}
+
 /* --- 1. 变量定义层 --- */
 :root {
   --bg-color: #ffffff;
