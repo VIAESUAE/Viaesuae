@@ -421,20 +421,25 @@ html {
   padding-top: 30px;
 }
 
-/* 这里的样式会尝试渗透进评论区文字 */
 .comments-section {
-  max-width: 800px; /* 必须和你的文章主体宽度一致 */
-  margin: 80px 0 0 0; /* 靠左分布，上方留白 */
+  width: 100%;
+  max-width: 800px;
+  margin: 60px auto 0; /* auto 会让它在页面居中，如果你想靠左请改为 60px 0 0 0 */
   padding: 0;
   border-top: 2px solid var(--accent-red);
-  background: transparent;
 }
 
-/* 强制 Cusdis 的内部容器不产生额外滚动条 */
+/* 评论区内部容器 */
 #cusdis_thread {
   width: 100% !important;
-  min-height: 400px; /* 给它一个基础高度 */
-  overflow: visible !important; /* 允许它向下延伸 */
+  display: block;
+}
+
+/* 强制让 iframe 铺开 */
+#cusdis_thread iframe {
+  width: 100% !important;
+  border: none !important;
+  overflow: hidden !important;
 }
 
 .cover-section {
