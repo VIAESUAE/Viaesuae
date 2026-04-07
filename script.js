@@ -69,3 +69,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 });
+
+window.addEventListener('message', e => {
+  if (e.data && e.data.type === 'cusdis:height') {
+    const iframe = document.querySelector('#cusdis_thread iframe');
+    if (iframe) {
+      iframe.style.height = e.data.data + 'px';
+    }
+  }
+});
