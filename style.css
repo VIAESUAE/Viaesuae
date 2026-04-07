@@ -416,9 +416,19 @@ html {
 }
 
 /* 这里的样式会尝试渗透进评论区文字 */
+.comments-section {
+  max-width: 800px; /* 必须和你的文章主体宽度一致 */
+  margin: 80px 0 0 0; /* 靠左分布，上方留白 */
+  padding: 0;
+  border-top: 2px solid var(--accent-red);
+  background: transparent;
+}
+
+/* 强制 Cusdis 的内部容器不产生额外滚动条 */
 #cusdis_thread {
-  font-family: "LBS", serif !important;
-  color: var(--text-color) !important;
+  width: 100% !important;
+  min-height: 400px; /* 给它一个基础高度 */
+  overflow: visible !important; /* 允许它向下延伸 */
 }
 
 .cover-section {
