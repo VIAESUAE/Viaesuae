@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const theme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       body.setAttribute('data-theme', theme);
       localStorage.setItem('theme', theme);
+      
+      if (window.CUSDIS) {
+      const theme = body.getAttribute('data-theme');
+      window.CUSDIS.setTheme(theme);
+     }
     });
   }
 
