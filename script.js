@@ -1,23 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // --- 1. 夜间模式逻辑 ---
   const themeToggle = document.getElementById('theme-toggle');
   const body = document.body;
   
   const currentTheme = localStorage.getItem('theme') || 'light';
   body.setAttribute('data-theme', currentTheme);
+  initCusdisTheme(currentTheme);  // 页面加载时初始化
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       const theme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       body.setAttribute('data-theme', theme);
       localStorage.setItem('theme', theme);
-      
-      if (window.CUSDIS) {
-      const theme = body.getAttribute('data-theme');
-      window.CUSDIS.setTheme(theme);
-     }
+      initCusdisTheme(theme);  // 主题切换时更新
     });
   }
+});
+
+// Cusdis 主题初始化函数
+function initCusdisTheme(theme) {
+  if (window.CUSDIS && window.CUSDIS.setTheme) {
+    window.CUSDIS.setTheme(theme === 'dark' ? 'dark' : 'light');
+  }
+}
+
+// 监听 Cusdis 加载完成后调整高度
+window.addEventListener('message', e => {
+  if (e.data && e.data.type === 'cusdis:height') {
+    const iframe = document.querySelector('#cusdis_thread iframe');
+    if (iframe) {
+      iframe.style.height = e.data.data + 'px';
+      iframe.style.minHeight = e.data.data + 'px';
+    }
+  }
+});
 
   // --- 2. 智能导航逻辑 (修复子页面跳转) ---
   const navLinks = document.querySelectorAll('.nav-links a, .logo a');
