@@ -421,25 +421,38 @@ html {
   padding-top: 30px;
 }
 
+/* 评论区外层容器 - 放大到和文章一致的宽度 */
 .comments-section {
   width: 100%;
   max-width: 800px;
-  margin: 60px auto 0; /* auto 会让它在页面居中，如果你想靠左请改为 60px 0 0 0 */
+  margin: 80px auto 0;  /* 改为 auto 确保居中 */
   padding: 0;
   border-top: 2px solid var(--accent-red);
+  background: transparent;
 }
 
-/* 评论区内部容器 */
+/* Cusdis 线程容器 */
 #cusdis_thread {
   width: 100% !important;
-  display: block;
+  display: block !important;
+  min-height: 400px;
+  overflow: visible !important;
 }
 
-/* 强制让 iframe 铺开 */
+/* Cusdis iframe 自适应 */
 #cusdis_thread iframe {
   width: 100% !important;
+  min-height: 400px !important;
   border: none !important;
-  overflow: hidden !important;
+}
+
+/* 适配深色模式的评论框背景 */
+[data-theme="dark"] #cusdis_thread {
+  color-scheme: dark;
+}
+
+[data-theme="light"] #cusdis_thread {
+  color-scheme: light;
 }
 
 .cover-section {
