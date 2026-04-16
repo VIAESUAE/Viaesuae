@@ -455,19 +455,6 @@ html {
   color-scheme: light;
 }
 
-.cover-section {
-  height: 60vh; /* 缩短高度，别占满屏，更有档案感 */
-  background: var(--bg-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  /* 模拟钞票的底纹：极细的扫描线 */
-  background-image: radial-gradient(circle, var(--text-color) 0.5px, transparent 0.5px);
-  background-size: 30px 30px; 
-  opacity: 0.8;
-}
-
 .cover-section::after {
   content: "";
   position: absolute;
